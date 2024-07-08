@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Power Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="tab_box"> 
+            <nav >
+                <img src="images/logo.jpg" class="logo">
+            
+                 <button class="tab_btn active">Home</button>
+                 <button class="tab_btn">About</button>
+                 <button class="tab_btn">Contact</button>
+            </nav>
+            <div class="line"></div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content_box">
+            <div class="content active">
+                <h2></h2>
+                <div class="wrapper"> 
+                    <div class="form-box login">
+                        <h2>Login</h2>
+                        <button type="button"><span>Intern</span></button>
+                        <button type="button"><span>Administrator</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h2></h2>
+                <p>
+                    Tata Power is India's largest power company and, together with its subsidiaries & 
+                    jointly controlled entities, has an installed/managed capacity of 12,792 MW.
+                </p>
+            </div>      
+            <div class="content">
+                <h2></h2>
+                <p>
+                    Media Contact<br>
+                    Email: corporate-communications@tatapower.com
+                </p>
+            </div>    
+        </div>
+    </div>
+    
+    <script>
+        const tabs = document.querySelectorAll('.tab_btn');
+        const all_content = document.querySelectorAll('.content');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', (e) => {
+                tabs.forEach(tab => { tab.classList.remove('active') });
+                tab.classList.add('active');
+
+                var line = document.querySelector('.line');
+                line.style.width = e.target.offsetWidth + "px";
+                line.style.left = e.target.offsetLeft + "px";
+
+                all_content.forEach(content => { content.classList.remove('active') });
+                all_content[index].classList.add('active');
+            })
+        })
+    </script>
+</body>
+</html>
