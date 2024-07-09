@@ -8,8 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
-            background-image: url('background2.jpg'); /* Replace with your background image path */
-            background-size: cover; /* Adjust to cover the entire background */
+            background-image: url('background2.jpg'); 
+            background-size: cover; 
             background-position: center;
             background-repeat: no-repeat;
             
@@ -140,8 +140,7 @@
     </div>
 
     <script>
-        // Optional: You can add JavaScript validation or handling here if needed
-        // For basic file upload validation:
+        
         var form = document.getElementById('applicationForm');
         form.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -163,10 +162,9 @@
                 return;
             }
 
-            // Submit form or further processing logic can be added here
-            // For demo purposes, we're just showing an alert
+           
             alert('Form submitted successfully!\nDepartment: ' + department + '\nAadhaar Card: ' + aadhaarCard.name + '\nCV: ' + cv.name +  '\nStudent ID: ' + studentID.name +'\Photo: ' + Photo.name+ '\nMessage: ' + message);
-            // Reset form after submission if needed
+            
             form.reset();
         });
     </script>
