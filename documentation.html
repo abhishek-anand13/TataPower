@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-image: url('background2.jpg'); /* Replace with your background image path */
+            background-size: cover; /* Adjust to cover the entire background */
+            background-position: center;
+            background-repeat: no-repeat;
+            
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 140px; /* Adjust the width of your logo */
+            height: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-container {
+        background-color: rgba(255, 255, 255, 0.01); /* Adjust opacity and color to blend with background */
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.001); /* Optional: Add a subtle shadow */
+        }
+        .form-group {
+        margin-bottom: 20px;
+        }
+        select, input[type="file"], textarea {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .message-box {
+        resize: vertical;
+        height: 150px;
+        width: calc(100% - 20px); /* Adjust width to match other form elements */
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust to blend with background */
+    }
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .file-upload input[type="file"] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+        }
+        .file-upload-label {
+            display: inline-block;
+            padding: 8px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="logo.jpg" alt="Logo">
+    
+    <div class="form-container">
+        <h2>Internship Application Form</h2>
+        <form id="applicationForm" enctype="multipart/form-data">
+            <form id="applicationForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="departmentSelect">Choose Department:</label>
+                    <select id="departmentSelect" name="department">
+                        <option value="">Select Department</option>
+                        <option value="HR">HR</option>
+                        <option value="IT">IT</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="file-upload">
+                        <span class="file-upload-label">Upload Aadhaar Card</span>
+                        <input type="file" name="aadhaarCard" accept="image/*" required>
+                    </label><br><br>
+                    <label class="file-upload">
+                        <span class="file-upload-label">Upload CV</span>
+                        <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
+                    </label><br><br>
+                    <label class="file-upload">
+                        <span class="file-upload-label">Upload Student ID Card</span>
+                        <input type="file" name="studentID" accept="image/*" required>
+                    </label><br><br>
+                    <label class="file-upload">
+                        <span class="file-upload-label">Upload Your Photo</span>
+                        <input type="file" name="Photo" accept="image/*" required>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="applicationMessage">Write Your Application:</label>
+                    <textarea id="applicationMessage" name="message" class="message-box" placeholder="Write your application here..." required></textarea>
+                </div>
+                <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Optional: You can add JavaScript validation or handling here if needed
+        // For basic file upload validation:
+        var form = document.getElementById('applicationForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var department = document.getElementById('departmentSelect').value;
+            var aadhaarCard = document.querySelector('input[name="aadhaarCard"]').files[0];
+            var cv = document.querySelector('input[name="cv"]').files[0];
+            var studentID = document.querySelector('input[name="studentID"]').files[0];
+            var Photo = document.querySelector('input[name="Photo"]').files[0];
+            var message = document.getElementById('applicationMessage').value;
+
+            // Example validation
+            if (department === '') {
+                alert('Please select a department.');
+                return;
+            }
+
+            if (!aadhaarCard || !cv || !studentID || !Photo || message.trim() === '') {
+                alert('Please fill in all fields and upload required files.');
+                return;
+            }
+
+            // Submit form or further processing logic can be added here
+            // For demo purposes, we're just showing an alert
+            alert('Form submitted successfully!\nDepartment: ' + department + '\nAadhaar Card: ' + aadhaarCard.name + '\nCV: ' + cv.name +  '\nStudent ID: ' + studentID.name +'\Photo: ' + Photo.name+ '\nMessage: ' + message);
+            // Reset form after submission if needed
+            form.reset();
+        });
+    </script>
+</body>
+</html>
