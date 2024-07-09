@@ -82,6 +82,7 @@ nav{
 .content_box .content {
     display: none;
     animation: moving .5s ease;
+    font-size: 18px;
 }
 
 @keyframes moving {
