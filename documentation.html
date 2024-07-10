@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application Form</title>
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            margin: 0; /* Add this to remove default margin */
+            height: 100vh; /* Make the body full height */
             background-image: url('background2.jpg'); 
             background-size: cover; 
             background-position: center;
             background-repeat: no-repeat;
-            
+            display: flex; /* Add this to center the container */
+            justify-content: center; /* Add this to center the container */
+            align-items: center; /* Add this to center the container */
         }
         .logo {
             position: absolute;
@@ -26,12 +29,12 @@
             margin-bottom: 10px;
         }
         .form-container {
-        background-color: rgba(255, 255, 255, 0.01); /* Adjust opacity and color to blend with background */
+        background-color: rgba(255, 255, 255, 0.4); /* Adjust opacity and color to blend with background */
         padding: 20px;
         border-radius: 8px;
         max-width: 600px;
         margin: 20px auto;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.001); /* Optional: Add a subtle shadow */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
         }
         
         select, input[type="file"], textarea {
