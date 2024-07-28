@@ -15,7 +15,7 @@
             <form id="applicationForm" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="departmentSelect">Choose Department:</label>
-                    <select id="departmentSelect" name="department">
+                    <select id="departmentSelect" name="department" required>
                         <option value="">Select Department</option>
                         <option value="HR">HR</option>
                         <option value="IT">IT</option>
@@ -71,11 +71,11 @@
                 alert('Please fill in all fields and upload required files.');
                 return;
             }
-
-           
-            alert('Form submitted successfully!\nDepartment: ' + department + '\nAadhaar Card: ' + aadhaarCard.name + '\nCV: ' + cv.name +  '\nStudent ID: ' + studentID.name +'\Photo: ' + Photo.name+ '\nMessage: ' + message);
-            
+        
             form.reset();
+            event.preventDefault(); // Prevent form from submitting
+            this.submit();
+            location.href = 'afterdoc.html';
         });
     </script>
 </body>
