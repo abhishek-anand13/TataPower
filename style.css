@@ -41,6 +41,12 @@ nav{
     height: auto;
 }
 
+nav ul button{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
 .tab_box {
     display: flex;
     align-items: center;
