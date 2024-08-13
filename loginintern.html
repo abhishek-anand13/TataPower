@@ -11,18 +11,18 @@
     
     <div class="container">
         <h2>Login</h2>
-        <form id="loginForm">
+        <form name="submit-to-google-sheet" id="loginForm">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="email">Email ID:</label>
-                <input type="email" id="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="contact">Contact Number:</label>
-                <input type="tel" id="contact" class="form-control" required>
+                <input type="tel" name="contact" class="form-control" required>
             </div>
             <button type="submit" class="btn">Login</button>
         </form>
@@ -35,5 +35,19 @@
             location.href = 'documentation.html'; // Redirect to the next page
         });
     </script>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwKtHdZZcNfzf2U4EhHVks0OGFmo9H1iYdMt5HU9bEsmlPcPi1CJzbzR_xPvs523d7fTA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, {method: "POST", body: new FormData(form)})
+            .then(response => consol.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+    
+        }) 
+     </script>
 </body>
 </html>
