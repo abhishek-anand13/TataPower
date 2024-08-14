@@ -11,8 +11,8 @@
     
     <div class="form-container">
         <h2>Internship Application Form</h2>
-        <form id="applicationForm" enctype="multipart/form-data">
-            <form id="applicationForm" enctype="multipart/form-data">
+        
+            <form name="submit-to-google-sheet" id="applicationForm" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="departmentSelect">Choose Department:</label>
                     <select id="departmentSelect" name="department" required>
@@ -22,7 +22,7 @@
                         <option value="Finance">Finance</option>
                         <option value="Marketing">Marketing</option>
                     </select>
-                </div>
+                </div> 
                 <div class="form-group">
                     <label class="file-upload">
                         <span class="file-upload-label">Upload Aadhaar Card</span>
@@ -78,5 +78,18 @@
             location.href = 'afterdoc.html';
         });
     </script>
+     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwaoZTSJtuG-aSRHDnub0VtzmXJC5Sv5OJJl_vgM23G1tpRHnLJXSuzb5cwO3KwOkndow/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+    
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, {method: "POST", body: new FormData(form)})
+            .then(response => consol.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+    
+        }) 
+     </script>
 </body>
 </html>
