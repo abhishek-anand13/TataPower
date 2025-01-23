@@ -1,154 +1,138 @@
-* {
+/* General Reset */
+body, h1, h2, h3, p, ul, li, a {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-image: url(background2.jpg);
-    background-size: cover;
-    background-position: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: flex-start; /* Align to the left */
-    z-index: 99;
-}
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.logo{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 140px; /* Adjust the width of your logo */
-    height: auto;
-}
-
-.tab_box {
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid rgba(229, 229, 229, 1);
-}
-
-.tab_box .tab_btn {
-    font-size: 18px;
-    font-weight: 600;
-    color: #070707;
-    background: none;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    white-space: nowrap;  /*Prevent text from wrapping*/ 
-}
-
-.tab_box .tab_btn.active {
-    color: #1c059c;
-}
-
-.line {
-    position: absolute;
-    bottom: 20px;
-    height: 4px;
-    background-color: #262627;
-    border-radius: 5px;
-    transition: all .2s ease-in-out;
-}
-
+/* Container */
 .container {
-    width: 100%;
-    max-width: 800px;
-    padding: 30px;
-    border-radius: 20px;
-    margin-top: 100px;  /*Adjust to make space for header*/ 
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.content_box {
-    padding: 20px;
+/* Header */
+.header {
+    background: #004085;
+    color: #fff;
+    padding: 1rem 0;
 }
-
-.content_box .content {
-    display: none;
-    animation: moving .5s ease;
-    font-size: 18px;
-}
-
-@keyframes moving {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-.content_box .content.active {
-    display: block;
-}
-
-.content_box .content h2 {
-    margin-bottom: 10px;
-}
-
-.wrapper {
-    position: relative;
-    width: 350px;
-    height: 390px;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+.header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    margin-top: 20px; /* Adjust to position properly */
 }
-
-button {
-    position: relative;
-    width: 300px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 30px 20px;
+.header .logo {
+    font-size: 1.5rem;
     font-weight: bold;
-    border: 2px solid #93c8fa;
-    background: transparent;
-    color: #070707;
-    cursor: pointer;
-    overflow: hidden;
-    text-transform: uppercase;
+}
+.header .nav ul {
+    list-style: none;
+    display: flex;
+}
+.header .nav ul li {
+    margin: 0 1rem;
+}
+.header .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.header .nav ul li a:hover {
+    color: #ffd700;
 }
 
-span {
-    background: #2f93e6;
-    height: 100%;
-    width: 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
+/* Banner */
+.banner {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 0;
+}
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.banner .buttons a {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.banner .btn-primary {
+    background: #ffd700;
+    color: #004085;
+}
+.banner .btn-primary:hover {
+    background: #ffc107;
+}
+.banner .btn-secondary {
+    background: #004085;
+    color: #fff;
+    border: 2px solid #ffd700;
+}
+.banner .btn-secondary:hover {
+    background: #ffd700;
+    color: #004085;
 }
 
-button:hover span {
-    width: 100%;
+/* Benefits Section */
+.benefits {
+    padding: 3rem 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+.benefits h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.benefit-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.benefit-item {
+    width: 30%;
+    margin-bottom: 1.5rem;
+}
+.benefit-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.benefit-item p {
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: #004085;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+.footer p {
+    margin-bottom: 0.5rem;
+}
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+.footer-nav a:hover {
+    color: #ffd700;
 }

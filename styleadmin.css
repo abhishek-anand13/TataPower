@@ -49,61 +49,73 @@ body {
     text-decoration: underline;
 }
 
-/* Application Form Section */
-.application-form {
+/* Admin Dashboard Section */
+.admin-dashboard {
     padding: 2rem;
     background-color: #fff;
 }
 
-.application-form h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+.admin-dashboard h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.application-form p {
+.filters {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 1.5rem;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-}
-
-.form-group input, 
-.form-group select, 
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
+.filters select {
+    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.form-group input[type="file"] {
-    border: none;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.apply-btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
+.filters button {
+    padding: 0.6rem 1.2rem;
     background-color: #000;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
 }
 
-.apply-btn:hover {
+.filters button:hover {
     background-color: #444;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td button {
+    padding: 0.4rem 1rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #218838;
 }
 
 /* Footer */
@@ -112,14 +124,4 @@ textarea {
     color: #fff;
     padding: 1rem;
     text-align: center;
-}
-
-.footer-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
 }
