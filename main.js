@@ -119,3 +119,53 @@ document.addEventListener("DOMContentLoaded", () => {
     displayApplications(applications); // Display all applications initially
 });
 
+
+
+
+
+
+
+
+
+// ---faq---
+
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isVisible = answer.style.display === 'block';
+
+        // Toggle answer visibility
+        answer.style.display = isVisible ? 'none' : 'block';
+    });
+});
+
+
+
+
+
+
+// ----contact-----
+
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formMessage = document.getElementById("formMessage");
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Simple form validation
+    if (name && email && message) {
+        formMessage.textContent = "Thank you for contacting us, " + name + ". We'll get back to you shortly!";
+        formMessage.style.display = "block";
+    } else {
+        formMessage.textContent = "Please fill in all fields before submitting.";
+        formMessage.style.backgroundColor = "#f8d7da";
+        formMessage.style.color = "#721c24";
+        formMessage.style.display = "block";
+    }
+
+    // Reset form fields
+    document.getElementById("contactForm").reset();
+});
